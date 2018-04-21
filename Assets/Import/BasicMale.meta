@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: dca00bb383e8ebc499a96daa162168ae
 folderAsset: yes
 timeCreated: 1524059760
+=======
+guid: 13e5ed8b15d05364aaa73b64d7b504f9
+folderAsset: yes
+timeCreated: 1524060076
+>>>>>>> Dirk
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

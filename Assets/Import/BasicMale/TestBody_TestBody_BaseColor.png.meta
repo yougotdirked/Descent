@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9b23eb56cfa06114fb9528346d423210
 timeCreated: 1524059860
+=======
+guid: 98602d38e6987914c906fd794970230f
+timeCreated: 1524060081
+>>>>>>> Dirk
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4494117, g: 0.49633944, b: 0.55877703, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,32 +113,74 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &275774079
+--- !u!1001 &529812913
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.17272517
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.90619755
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948502845785958, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 49571d92e853c694799e343ac6e73b62, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &669495941
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 275774081}
-  - component: {fileID: 275774080}
+  - component: {fileID: 669495943}
+  - component: {fileID: 669495942}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &275774080
+--- !u!108 &669495942
 Light:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 275774079}
+  m_GameObject: {fileID: 669495941}
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.9168357, b: 0.6985294, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -165,19 +207,23 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &275774081
+--- !u!4 &669495943
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 275774079}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_GameObject: {fileID: 669495941}
+  m_LocalRotation: {x: -0.4036984, y: -0.87860733, z: 0.08217892, w: -0.24150266}
+  m_LocalPosition: {x: -0.13, y: 4.28, z: 3.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+<<<<<<< HEAD:Assets/Scenes/Test_Dirk.unity
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: 160.16, y: -382.372, z: -134.606}
+>>>>>>> Dirk:Assets/Scenes/ShaderTest.unity
 --- !u!1 &1551573718
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,12 +298,18 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551573718}
+<<<<<<< HEAD:Assets/Scenes/Test_Dirk.unity
   m_LocalRotation: {x: -0, y: -0.97633034, z: -0, w: 0.21628472}
   m_LocalPosition: {x: 2.49, y: 2.6, z: 5.98}
+=======
+  m_LocalRotation: {x: 0.020650463, y: -0.9788742, z: 0.12759493, w: 0.15842484}
+  m_LocalPosition: {x: 1.13, y: 3.64, z: 4.72}
+>>>>>>> Dirk:Assets/Scenes/ShaderTest.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< HEAD:Assets/Scenes/Test_Dirk.unity
   m_LocalEulerAnglesHint: {x: 0, y: -155.018, z: 0}
 --- !u!1001 &1799971477
 Prefab:
@@ -374,3 +426,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_LocalEulerAnglesHint: {x: 14.853001, y: -161.613, z: 0}
+>>>>>>> Dirk:Assets/Scenes/ShaderTest.unity
