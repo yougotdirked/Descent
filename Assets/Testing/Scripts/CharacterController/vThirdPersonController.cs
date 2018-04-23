@@ -20,6 +20,7 @@ namespace Invector.CharacterController
                 isSprinting = value;
             else
                 isSprinting = false;
+           
         }
 
         public virtual void Strafe()

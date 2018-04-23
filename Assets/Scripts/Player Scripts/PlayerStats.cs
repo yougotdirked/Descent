@@ -10,7 +10,7 @@ using UnityEngine.UI;
  * Currently adapted to Invector's standard character controller
  * TODO
  * health mechanics
- * 
+ * sprinting doesnt stop when there is no stamina left
  * */
 namespace Invector.CharacterController
 {
