@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TestMaterial
-  m_Shader: {fileID: 4800000, guid: 10d8d1a173640624d866e7f647ab25f1, type: 3}
+  m_Name: TestMat3
+  m_Shader: {fileID: 4800000, guid: 4d7401f0a9072d1498dc8391abe14f3c, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 1
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -22,9 +22,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DarkShadowPattern:
-        m_Texture: {fileID: 2800000, guid: 1fd3cb429b9f97b4e8f7a582d08fed6a, type: 3}
-        m_Scale: {x: 30, y: 30}
+    - _ColorMap:
+        m_Texture: {fileID: 2800000, guid: 9470468fda72f4773a90a0306decbf0f, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
@@ -46,10 +46,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MediumShadowPattern:
-        m_Texture: {fileID: 2800000, guid: d435e3dd03ad47e4ea2ba4e213e6ce64, type: 3}
-        m_Scale: {x: 30, y: 30}
-        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -67,10 +63,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Pattern:
-        m_Texture: {fileID: 2800000, guid: e6919c366bbe1404eb033330c659d310, type: 3}
-        m_Scale: {x: 10, y: 1}
+        m_Texture: {fileID: 2800000, guid: d435e3dd03ad47e4ea2ba4e213e6ce64, type: 3}
+        m_Scale: {x: 25, y: 25}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BlackSpotIntensity: 0.3
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -78,15 +75,20 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _HighlighIntensity: 0.2
+    - _LightThreshhold: 0.4
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Offset: 0.5
     - _Parallax: 0.02
+    - _ShadowIntensity: 2
+    - _ShadowThreshhold: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.81303096, g: 0.8161765, b: 0.5881272, a: 1}
+    - _Color: {r: 0.8088235, g: 0.6237621, b: 0.5233564, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
