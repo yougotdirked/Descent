@@ -5,10 +5,10 @@ namespace Invector.CharacterController
 {
     public class vThirdPersonController : vThirdPersonAnimator
     {
-        PlayerStats playerstats;
+        PlayerStats_Invector playerstats;
         protected virtual void Start()
         {
-            playerstats = GetComponent<PlayerStats>();
+            playerstats = GetComponent<PlayerStats_Invector>();
 #if !UNITY_EDITOR
                 Cursor.visible = false;
 #endif
