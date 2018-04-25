@@ -723,6 +723,7 @@ GameObject:
   - component: {fileID: 11467016}
   - component: {fileID: 5456684}
   - component: {fileID: 13609524}
+  - component: {fileID: 114601619704572876}
   m_Layer: 0
   m_Name: vThirdPersonCamera
   m_TagString: Player
@@ -2146,15 +2147,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148850}
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000010430813}
-  m_LocalPosition: {x: 313.88995, y: 1.64, z: 202.08162}
+  m_LocalRotation: {x: -0, y: -0.66664296, z: -0, w: -0.7453772}
+  m_LocalPosition: {x: -34.07, y: 0.18, z: -65.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 498942}
   - {fileID: 458354}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 83.617004, z: 0}
 --- !u!4 &470652
 Transform:
   m_ObjectHideFlags: 1
@@ -2566,9 +2567,9 @@ MonoBehaviour:
   jumpForward: 3
   jumpHeight: 4
   useRootMotion: 0
-  freeWalkSpeed: 2.5
-  freeRunningSpeed: 3
-  freeSprintSpeed: 4
+  freeWalkSpeed: 1.5
+  freeRunningSpeed: 3.5
+  freeSprintSpeed: 3.5
   strafeWalkSpeed: 2.5
   strafeRunningSpeed: 3
   strafeSprintSpeed: 4
@@ -3141,3 +3142,27 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148850}
   m_IsPrefabParent: 1
+--- !u!114 &114601619704572876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3afda10cf537c438fe24d0ea7b8fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxStamina: 100
+  maxHealth: 100
+  jumpCost: 5
+  rollCost: 0
+  runCost: 2
+  staminatext: {fileID: 0}
+  healthtext: {fileID: 0}
+  staminaRegenRate: 5
+  healthRegenRate: 0
+  currentStamina: 0
+  currentHealth: 0
+  canJump: 0
+  canSprint: 0

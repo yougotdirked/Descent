@@ -6,10 +6,15 @@ using UnityEngine.UI;
 /*
  * Class to keep track of the player's stats. Here other classes can look up the stamina value etc.
  * Furthermore this class will make sure the UI shows the correct values.
+ * 
+ * Currently adapted to Invector's standard character controller
  * TODO
  * health mechanics
+ * sprinting doesnt stop when there is no stamina left
  * */
-    public class PlayerStats : MonoBehaviour
+namespace Invector.CharacterController
+{
+    public class PlayerStats_Invector : MonoBehaviour
     {
         #region Properties
         public float maxStamina = 100;
@@ -29,7 +34,7 @@ using UnityEngine.UI;
         public float currentHealth;
 
         bool hasJumped = false;
-        CharacterMotor motor;
+        vThirdPersonMotor motor;
         #endregion
 
         public bool canJump;
@@ -41,7 +46,7 @@ using UnityEngine.UI;
             currentHealth = maxHealth;
             currentStamina = maxStamina;
 
-            motor = GetComponent<CharacterMotor>();
+            motor = GetComponent<vThirdPersonController>();
         }
 
         // Update is called once per frame
@@ -95,3 +100,4 @@ using UnityEngine.UI;
         }
         #endregion
     }
+}
