@@ -38,7 +38,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
-# ProBuilder
-Assets/ProCore/ProBuilder/Data/ProBuilderPreferences.asset
-Assets/ProCore/ProBuilder/Data/ProBuilderPreferences.asset.meta
