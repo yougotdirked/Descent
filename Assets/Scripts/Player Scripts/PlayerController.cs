@@ -6,6 +6,7 @@ public class PlayerController : PlayerAnimator {
 
     #region Properties
     PlayerStats playerstats;
+    PlayerCombat playercombat;
     #endregion
     // Use this for initialization
     void Start () {
@@ -37,6 +38,8 @@ public class PlayerController : PlayerAnimator {
     {
         if (!playerstats.canAttack)
             return;
+
+        playercombat.CalculateAttack();
     }
 
     public virtual void Dodge()
@@ -49,7 +52,6 @@ public class PlayerController : PlayerAnimator {
         //trigger behaviour
         if (input.magnitude > 0)
         {
-            Debug.Log("dodging!");
             isDodging = true;
             dodgeCounter = dodgeTimer;
 
@@ -60,7 +62,7 @@ public class PlayerController : PlayerAnimator {
             }
             else
             {
-                animator.CrossFadeInFixedTime("DodgeTime", 0.2f);
+                animator.CrossFadeInFixedTime("DodgeMove", 0.2f);
             }
 
             //update player stats

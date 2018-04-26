@@ -6,6 +6,7 @@ public class PlayerInput : MonoBehaviour {
 
     #region Properties
     PlayerController controller;
+    PlayerCombat playercombat;
 
     public vThirdPersonCamera camera;
 
@@ -43,6 +44,7 @@ public class PlayerInput : MonoBehaviour {
     // Use this for initialization
     void Start () {
         controller = GetComponent<PlayerController>();
+        playercombat = GetComponent<PlayerCombat>();
         if (camera)
             camera.SetMainTarget(this.transform);
 
@@ -60,6 +62,9 @@ public class PlayerInput : MonoBehaviour {
         if (controller == null) return;
         InputHandle();
         UpdateCameraStates();
+
+        if (playercombat == null) return;
+        playercombat.SetInput();
     }
 
     protected virtual void FixedUpdate()
@@ -71,7 +76,7 @@ public class PlayerInput : MonoBehaviour {
     protected virtual void Update()
     {
         controller.UpdateMotor();
-        //controller.UpdateAnimator();
+        controller.UpdateAnimator();
     }
 
     protected virtual void InputHandle()

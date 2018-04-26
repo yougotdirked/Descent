@@ -34,49 +34,50 @@ public class PlayerStats : MonoBehaviour
         CharacterMotor motor;
         #endregion
 
-        public bool canJump;
-        public bool canSprint;
-        public bool canDodge;
-        public bool canBlock;
-        public bool canAttack;
+    public bool canJump;
+    public bool canSprint;
+    public bool canDodge;
+    public bool canBlock;
+    public bool canAttack;
 
-        // Use this for initialization
-        void Start()
-        {
-            currentHealth = maxHealth;
-            currentStamina = maxStamina;
+    public Weapon weapon;
+    // Use this for initialization
+    void Start()
+    {
+        currentHealth = maxHealth;
+        currentStamina = maxStamina;
 
-            motor = GetComponent<CharacterMotor>();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        checkSprint();
-        checkJump();
-        checkAttack();
-        checkDodge();
-        if (staminatext != null)
-            staminatext.text = ((int)currentStamina).ToString();
-        if (healthtext != null)
-            healthtext.text = ((int)currentHealth).ToString();
-
-        if (motor.isGrounded && hasJumped)
-        {
-            hasJumped = false;
-        }
-
-        if (!motor.isSprinting && !motor.isJumping && !motor.isBlocking && !motor.isDodging)
-        {
-            if (currentStamina <= maxStamina)
-                currentStamina += staminaRegenRate * Time.deltaTime;
-            else
-                currentStamina = maxStamina;
-        }
-
-        if (currentStamina <= 0)
-            currentStamina = 0;
+        motor = GetComponent<CharacterMotor>();
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+    checkSprint();
+    checkJump();
+    checkAttack();
+    checkDodge();
+    if (staminatext != null)
+        staminatext.text = ((int)currentStamina).ToString();
+    if (healthtext != null)
+        healthtext.text = ((int)currentHealth).ToString();
+
+    if (motor.isGrounded && hasJumped)
+    {
+        hasJumped = false;
+    }
+
+    if (!motor.isSprinting && !motor.isJumping && !motor.isBlocking && !motor.isDodging)
+    {
+        if (currentStamina <= maxStamina)
+            currentStamina += staminaRegenRate * Time.deltaTime;
+        else
+            currentStamina = maxStamina;
+    }
+
+    if (currentStamina <= 0)
+        currentStamina = 0;
+}
 
     #region Action Checks
     void checkSprint()
