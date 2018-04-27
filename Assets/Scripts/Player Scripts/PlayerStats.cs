@@ -40,7 +40,6 @@ public class PlayerStats : MonoBehaviour
     public bool canBlock;
     public bool canAttack;
 
-    public Weapon weapon;
     // Use this for initialization
     void Start()
     {

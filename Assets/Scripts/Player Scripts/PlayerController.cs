@@ -11,6 +11,7 @@ public class PlayerController : PlayerAnimator {
     // Use this for initialization
     void Start () {
         playerstats = GetComponent<PlayerStats>();
+        playercombat = GetComponent<PlayerCombat>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +41,7 @@ public class PlayerController : PlayerAnimator {
             return;
 
         playercombat.CalculateAttack();
+        playercombat.AttackAnimation();
     }
 
     public virtual void Dodge()

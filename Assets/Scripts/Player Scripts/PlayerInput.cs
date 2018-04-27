@@ -106,7 +106,11 @@ public class PlayerInput : MonoBehaviour {
     protected virtual void AttackInput()
     {
         if (Input.GetAxis(attackInput) > 0)
+        {
             controller.Attack();
+            controller.isAttacking = true;
+        }
+        else controller.isAttacking = false;
     }
 
     protected virtual void DodgeInput()
