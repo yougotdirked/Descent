@@ -14919,7 +14919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -14965,6 +14965,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8f38b1b680876ca43ad7f54a8b7d88db, type: 2}
+    - target: {fileID: 137371866330450726, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 725ece97da2f2434b849004931969d48, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
   m_IsPrefabParent: 0
@@ -78278,7 +78283,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-14398458
+  m_Name: pb_Mesh13664
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
