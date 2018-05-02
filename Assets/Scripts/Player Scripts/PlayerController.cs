@@ -38,6 +38,9 @@ public class PlayerController : PlayerAnimator {
         if (!playerstats.canAttack)
             return;
 
+        if (isAttacking)
+            return;
+
         attackCounter = playercombat.currentAttack.attackTime;
         playercombat.CalculateAttack();
         playercombat.AttackAnimation();
