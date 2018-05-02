@@ -6,12 +6,10 @@ public class PlayerController : PlayerAnimator {
 
     #region Properties
     PlayerStats playerstats;
-    PlayerCombat playercombat;
     #endregion
     // Use this for initialization
     void Start () {
         playerstats = GetComponent<PlayerStats>();
-        playercombat = GetComponent<PlayerCombat>();
 	}
 	
 	// Update is called once per frame
@@ -40,6 +38,7 @@ public class PlayerController : PlayerAnimator {
         if (!playerstats.canAttack)
             return;
 
+        attackCounter = playercombat.currentAttack.attackTime;
         playercombat.CalculateAttack();
         playercombat.AttackAnimation();
     }
@@ -58,14 +57,7 @@ public class PlayerController : PlayerAnimator {
             dodgeCounter = dodgeTimer;
 
             //dodge animation
-            if (_rigidbody.velocity.magnitude < 1)
-            {
-                animator.CrossFadeInFixedTime("Dodge", 0.1f);
-            }
-            else
-            {
-                animator.CrossFadeInFixedTime("DodgeMove", 0.2f);
-            }
+            animator.CrossFadeInFixedTime("StartDodge", 0.1f);
 
             //update player stats
             playerstats.currentStamina -= playerstats.dodgeCost;

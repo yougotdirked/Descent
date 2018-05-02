@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimator : CharacterMotor {
-
     public virtual void UpdateAnimator()
     {
         if (animator == null || !animator.enabled) return;
@@ -12,6 +11,7 @@ public class PlayerAnimator : CharacterMotor {
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("GroundDistance", groundDistance);
         animator.SetBool("IsDodging", isDodging);
+        animator.SetFloat("BlockValue", blockValue);
 
         if (!isGrounded)
             animator.SetFloat("VerticalVelocity", verticalVelocity);
@@ -20,6 +20,16 @@ public class PlayerAnimator : CharacterMotor {
         {
             animator.SetFloat("InputHorizontal", direction, 0.1f, Time.deltaTime);
         }
+
+        if (isAttacking && playercombat.currentAttack.canMove)
+        {
+            animator.SetLayerWeight(1, 1f);
+        }
+
+        else 
+            animator.SetLayerWeight(1, 0f);
+
+        animator.SetFloat("AttackCounter", attackCounter);
         animator.SetFloat("InputVertical", speed, 0.1f, Time.deltaTime);
     }
 

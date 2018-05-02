@@ -56,12 +56,14 @@ public class CharacterMotor : MonoBehaviour {
     public float dodgeTimer = .1f;
     [HideInInspector] public float dodgeCounter;
     [HideInInspector] public float jumpCounter;
+    [HideInInspector] public float attackCounter = 0;
 
     public float walkSpeed;
     public float runSpeed;
     public float sprintSpeed;
     public float blockSpeed;
     public float dodgeSpeed;
+    [HideInInspector] public float blockValue;
 
      [Header("--- Movement Speed ---")]
         [Tooltip("Check to drive the character using RootMotion of the animation")]
@@ -110,6 +112,9 @@ public class CharacterMotor : MonoBehaviour {
     [HideInInspector] public Vector2 input;
     [HideInInspector] public float speed, direction, verticalVelocity;
     [HideInInspector] public float velocity;
+    [HideInInspector] public float speedModifier;
+
+    [HideInInspector] public PlayerCombat playercombat;
 
     public void Init()
     {
@@ -122,6 +127,8 @@ public class CharacterMotor : MonoBehaviour {
         // capsule collider info
         _capsuleCollider = GetComponent<CapsuleCollider>();
 
+        // player combat info
+        playercombat = GetComponent<PlayerCombat>();
     }
 
     //called by the input class
@@ -130,19 +137,48 @@ public class CharacterMotor : MonoBehaviour {
         //Update the motor based on the variables updated by the input
         CheckGround();
         ControlJumpBehaviour();
+        ControlAttackBehaviour();
         ControlLocomotion();
         ControlDodgeBehaviour();
     }
 
+    void ControlAttackBehaviour()
+    {
+        isAttacking = attackCounter > 0;
+
+        if (isAttacking)
+        {
+            isBlocking = false;
+            attackCounter -= Time.deltaTime;
+        }
+
+        else
+        {
+            attackCounter = 0;
+            foreach (AttackPrimitive a in playercombat.attacks)
+            {
+                a.checkIfCurrent();
+            }
+        }
+    }
+
     void ControlLocomotion()
     {
-        if (isBlocking)
+        if (isBlocking && !isAttacking)
         {
             StrafeMovement();
+            animator.SetLayerWeight(2, 1);
         }
         else
+        {
             FreeMovement();
+            animator.SetLayerWeight(2, 0);
+        }
 
+        if (isAttacking && !playercombat.currentAttack.canMove)
+        {
+            speed = playercombat.currentAttack.moveSpeedWhileAttacking;
+        }
     }
 
     public virtual void FreeMovement()
@@ -173,12 +209,12 @@ public class CharacterMotor : MonoBehaviour {
 
     void StrafeMovement()
     {
-        var _speed = Mathf.Clamp(input.y, -1f, 1f);
-        var _direction = Mathf.Clamp(input.x, -1f, 1f);
-        speed = _speed;
-        direction = _direction;
-        if (isSprinting) speed += 0.5f;
-        if (direction >= 0.7 || direction <= -0.7 || speed <= 0.1) isSprinting = false;
+            var _speed = Mathf.Clamp(input.y, -1f, 1f);
+            var _direction = Mathf.Clamp(input.x, -1f, 1f);
+            speed = _speed;
+            direction = _direction;
+            if (isSprinting) speed += 0.5f;
+            if (direction >= 0.7 || direction <= -0.7 || speed <= 0.1) isSprinting = false;
     }
 
     protected void ControlSpeed(float velocity)

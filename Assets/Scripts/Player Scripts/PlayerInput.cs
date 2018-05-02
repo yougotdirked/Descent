@@ -64,7 +64,6 @@ public class PlayerInput : MonoBehaviour {
         UpdateCameraStates();
 
         if (playercombat == null) return;
-        playercombat.SetInput();
     }
 
     protected virtual void FixedUpdate()
@@ -100,17 +99,16 @@ public class PlayerInput : MonoBehaviour {
 
     protected virtual void BlockInput()
     {
-        controller.isBlocking = Input.GetAxis(blockInput) > 0;
+        controller.isBlocking = Input.GetButton(blockInput);
+        controller.blockValue = Input.GetAxis(blockInput);
     }
 
     protected virtual void AttackInput()
     {
-        if (Input.GetAxis(attackInput) > 0)
+        if (Input.GetButtonDown(attackInput))
         {
             controller.Attack();
-            controller.isAttacking = true;
         }
-        else controller.isAttacking = false;
     }
 
     protected virtual void DodgeInput()
