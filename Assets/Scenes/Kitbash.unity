@@ -75271,7 +75271,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -14.15
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -75279,23 +75279,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -47
+      value: -49.88
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.35140356
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9362241
       objectReference: {fileID: 0}
     - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
       propertyPath: m_RootOrder
@@ -75316,6 +75316,35 @@ Prefab:
       propertyPath: healthtext
       value: 
       objectReference: {fileID: 1438166863}
+    - target: {fileID: 114733700869159068, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: strafeRotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733700869159068, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: blockRotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733700869159068, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: slopeLimit
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733700869159068, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: stepOffsetEnd
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114733700869159068, guid: d7b0f394811e8ac4380074b810d57db0,
+        type: 2}
+      propertyPath: stepSmooth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394820181471306, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 41.146004
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7b0f394811e8ac4380074b810d57db0, type: 2}
   m_IsPrefabParent: 0
