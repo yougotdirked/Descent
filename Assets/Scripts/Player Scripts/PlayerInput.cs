@@ -21,7 +21,12 @@ public class PlayerInput : MonoBehaviour {
     public KeyCode dodgeInput = KeyCode.LeftAlt;
     public string attackInput = "LeftMouse";
     public string blockInput = "RightMouse";
+
+    public string scrollWheel = "ScrollWheel";
     #endregion
+
+    float scrollResetTime = .3f;
+    float scrollResetCounter = 0;
 
     #region Camera
     [Header("Camera Settings")]
@@ -70,6 +75,12 @@ public class PlayerInput : MonoBehaviour {
     {
         controller.AirControl();
         CameraInput();
+
+        if (scrollResetCounter > 0)
+        {
+            scrollResetCounter -= Time.deltaTime;
+        }
+        else scrollResetCounter = 0;
     }
 
     protected virtual void Update()
@@ -82,6 +93,7 @@ public class PlayerInput : MonoBehaviour {
     {
         ExitGameInput();
         CameraInput();
+        ScrollWheelInput();
 
         MoveCharacter();
         SprintInput();
@@ -89,6 +101,18 @@ public class PlayerInput : MonoBehaviour {
         DodgeInput();
         JumpInput();
         BlockInput();
+    }
+
+    protected virtual void ScrollWheelInput()
+    {
+        if (!(scrollResetCounter > 0))
+        {
+            if (Input.GetAxis(scrollWheel) != 0)
+            {
+                playercombat.switchSet(Input.GetAxis(scrollWheel));
+                scrollResetCounter = scrollResetTime;
+            }
+        }
     }
 
     protected virtual void MoveCharacter()

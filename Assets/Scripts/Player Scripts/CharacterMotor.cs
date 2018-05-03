@@ -154,11 +154,11 @@ public class CharacterMotor : MonoBehaviour {
 
         else
         {
-            attackCounter = 0;
-            foreach (AttackPrimitive a in playercombat.attacks)
-            {
-                a.checkIfCurrent();
-            }
+           foreach (AttackPrimitive a in playercombat.attacks)
+           {
+               a.checkIfCurrent();
+           }
+
         }
     }
 
